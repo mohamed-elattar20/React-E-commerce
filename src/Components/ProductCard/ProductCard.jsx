@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
+import "./ProductCard.css";
 const ProductCard = ({ product }) => {
   return (
     <>
       <div className="col-sm-12 col-md-6 col-lg-3">
-        <div className="card border-0 shadow rounded-4">
-          <img
-            style={{ height: "300px", objectFit: "contain" }}
-            src={product.image}
-            className="card-img-top  rounded-4 "
-            alt="..."
-          />
+        <div className="card border-0 shadow rounded-4 p-2">
+          <Link to={`/products/${product.id}`} className="hover-container">
+            <img
+              style={{ height: "300px", objectFit: "contain" }}
+              src={product.image}
+              className="card-img-top  rounded-4 hover"
+              alt="..."
+            />
+          </Link>
           <div className="card-body">
             <h5
               style={{ height: "3rem", overflow: "hidden" }}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -20,21 +20,19 @@ const ProductDetails = () => {
         <div className="row">
           {loading ? (
             <div className="card mb-3 border-0 shadow-lg p-5 rounded-4 ">
-              <div className="row g-0">
+              <div className="row g-4">
                 <div className="col-md-4">
                   <img
                     style={{ height: "400px", objectFit: "cover" }}
                     src={product.image}
-                    className="img-fluid rounded-start"
+                    className="img-fluid rounded-4"
                     alt="..."
                   />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
                     <h5 className="card-title fs-1 mb-3">{product.title}</h5>
-                    <p className="card-text lead ">
-                      Rating :{product.description}
-                    </p>
+                    <p className="card-text lead ">{product.description}</p>
 
                     <p
                       className={`${
@@ -48,14 +46,17 @@ const ProductDetails = () => {
                         ${product.price}
                       </small>
                     </p>
+                    <Link to="/" className="btn btn-dark">
+                      Back to Home
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           ) : (
             <div className="row justify-content-center align-items-center vh-100">
-              <div class="spinner-border" role="status">
-                <span class="visually-hidden ">Loading...</span>
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden ">Loading...</span>
               </div>
             </div>
           )}

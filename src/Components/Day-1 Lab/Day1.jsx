@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// const initialState = [{}];
 const Day1 = () => {
   const [users, setUsers] = useState([
     { id: 1, name: "mohamed", age: 24 },
@@ -22,6 +23,8 @@ const Day1 = () => {
     if (name.length != 0 && age.length != 0) {
       setUsers([{ id: counter, name: name, age: age }, ...users]);
       setCounter(counter + 1);
+      setAge("");
+      setName("");
     }
   };
   const deleteUser = (userName) => {

@@ -17,15 +17,15 @@ const Products = () => {
     <>
       <div className="container my-5">
         {!loading ? (
-          <div className="row g-3">
+          <div className="row g-4">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
           <div className="row justify-content-center align-items-center vh-100">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden ">Loading...</span>
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden ">Loading...</span>
             </div>
           </div>
         )}

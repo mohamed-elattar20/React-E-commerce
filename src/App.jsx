@@ -6,6 +6,7 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import Login from "./Components/Login/Login";
 import About from "./Components/About/About";
 import NotFound from "./Components/Not-found/NotFound";
+import Counter from "./Components/Counter/Counter";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/day1-lab" element={<Day1 />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

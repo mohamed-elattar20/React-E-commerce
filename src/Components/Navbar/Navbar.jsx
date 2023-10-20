@@ -5,8 +5,8 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg text-light">
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            Navbar
+          <Link className="navbar-brand fw-bold fs-4 " to="/">
+            Shopify
           </Link>
           <button
             className="navbar-toggler"
@@ -42,7 +42,12 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/day1-lab">
-                  Day1-Lab
+                  Add Users
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/counter">
+                  Counter
                 </Link>
               </li>
             </ul>
