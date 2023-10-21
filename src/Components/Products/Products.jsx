@@ -1,33 +1,44 @@
-import { useEffect, useState } from "react";
+//  React
+// import { useEffect, useState } from "react";
+// Components
 import ProductCard from "../ProductCard/ProductCard";
+import Loading from "../Loading/Loading";
+// Hooks
+import useGetProducts from "../../Hooks/useProducts";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setProducts(data);
-        setLoading(false);
-      });
-  }, []);
+  // const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState("");
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       let { data } = await axios.get("https://fakestoreapi.com/products");
+  //       setProducts((prevState) => [...prevState, ...data]);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getProducts();
+  // }, []);
+  const [products, loading, error] = useGetProducts();
   return (
     <>
       <div className="container my-5">
-        {!loading ? (
+        {loading ? (
+          <div className="row justify-content-center align-items-center vh-100">
+            <Loading />
+          </div>
+        ) : !error ? (
           <div className="row g-4">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
-          <div className="row justify-content-center align-items-center vh-100">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden ">Loading...</span>
-            </div>
-          </div>
+          <h1 className="display-1">{error}</h1>
         )}
       </div>
     </>

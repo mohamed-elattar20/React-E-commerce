@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+// Components
 import Day1 from "./Components/Day-1 Lab/Day1";
 import Navbar from "./Components/Navbar/Navbar";
 import Products from "./Components/Products/Products";

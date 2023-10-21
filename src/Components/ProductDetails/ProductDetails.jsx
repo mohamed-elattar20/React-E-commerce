@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -55,9 +56,7 @@ const ProductDetails = () => {
             </div>
           ) : (
             <div className="row justify-content-center align-items-center vh-100">
-              <div className="spinner-border" role="status">
-                <span className="visually-hidden ">Loading...</span>
-              </div>
+              <Loading />
             </div>
           )}
         </div>
