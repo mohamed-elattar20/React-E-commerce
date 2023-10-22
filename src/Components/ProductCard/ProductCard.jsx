@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "../../Redux/Slices/cartSlice";
 const ProductCard = ({ product }) => {
+  const { cartCounter } = useSelector((state) => state.cartSlice);
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="col-sm-12 col-md-6 col-lg-3">
@@ -38,6 +43,20 @@ const ProductCard = ({ product }) => {
             <Link to={`/products/${product.id}`} className="btn btn-primary">
               Show Details
             </Link>
+            <div className="mt-3">
+              <button
+                onClick={() => dispatch(decrement())}
+                className="btn btn-danger me-2  "
+              >
+                Remove
+              </button>
+              <button
+                onClick={() => dispatch(increment())}
+                className="btn btn-warning"
+              >
+                Add
+              </button>
+            </div>
           </div>
         </div>
       </div>

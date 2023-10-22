@@ -1,9 +1,11 @@
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const { cartCounter } = useSelector((state) => state.cartSlice);
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg text-light">
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg text-light sticky-top">
         <div className="container">
           <Link className="navbar-brand fw-bold fs-4 " to="/">
             Shopify
@@ -50,6 +52,12 @@ const Navbar = () => {
                   Counter
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/to-do">
+                  ToDo
+                </Link>
+              </li>
+              <li className="nav-item nav-link  ">CART : {cartCounter}</li>
             </ul>
           </div>
         </div>
