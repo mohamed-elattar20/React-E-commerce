@@ -9,6 +9,7 @@ import About from "./Components/About/About";
 import NotFound from "./Components/Not-found/NotFound";
 import Counter from "./Components/Counter/Counter";
 import ToDo from "./Components/ToDo/ToDo";
+import Signup from "./Components/Signup/Signup";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/day1-lab" element={<Day1 />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/to-do" element={<ToDo />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
